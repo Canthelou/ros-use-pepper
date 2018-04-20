@@ -9,7 +9,7 @@ We are using the most recent version of ROS that support the connexion of Pepper
 
 Require : 
 * [Ubuntu](https://ubuntu-fr.org/telechargement) - 16.04
-* [Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) - The Version of ros needed
+* [ROS](http://wiki.ros.org/kinetic/Installation/Ubuntu) - Version Kinetic
 
 Create a workspace in your path.
 
