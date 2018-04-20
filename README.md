@@ -1,87 +1,110 @@
-# Project Title
+# Pepper Protocol
 
-One Paragraph of project description goes here
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+We are using the most recent version of ROS that support the connexion of Pepper, so it need to be install and configure on your computer before we start.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Require : 
+* Ubuntu 16.04
+* [Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) - The Version of ros needed
 
-```
-Give examples
-```
+Create a workspace in your path.
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+Base package of navigation, viewing camera are needed.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+In a terminal execute : 
 
 ```
-until finished
+sudo apt-get ros-kinetic-move-base-msgs ros-kinetic-octomap ros-kinetic-octomap-msgs ros-kinetic-humanoid-msgs ros-kinetic-humanoid-nav-msgs ros-kinetic-camera-info-manager ros-kinetic-camera-info-manager-py 
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Next comes the package report to Pepper.
 
 ```
-Give an example
+sudo apt-get install ros-kinetic-pepper-.*
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+A drive can be found on github, so clone it in your workspace like so:
 
 ```
-Give an example
+git clone https://github.com/ros-naoqi/naoqi_driver.git
 ```
 
-## Deployment
+Do a *catkin_make* to build.
 
-Add additional notes about how to deploy this on a live system
+Now ros have all the package to control Pepper, but it miss the sdk.
 
-## Built With
+You can found it on the [SoftBank Robotics web site.](https://developer.softbankrobotics.com/us-en/downloads/pepper)
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+Download pepper linux64 and python2.7 sdk.
 
-## Contributing
+## Running the package
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+### PYTHONPATH
 
-## Versioning
+You need to inform the path of your naoqi sdk in the environnement variable PYTHONPATH.
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+```
+export PYTHONPATH=$PYTHONPATH:yourUserPath/sdkDirectory/pynaoqi-python2.7-2.5.5.5-linux64/lib/python2.7/site-packages
+```
 
-## Authors
+To avoid doing that in every terminal, modify your *.bashrc*.
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+### Connection to Pepper
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+Start pepper, wait until it move.
 
-## License
+Start *roscore*. And now you need to know the ip adress of Pepper by pressing the chest button.
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+The computer ip and the interface can be read with
 
-## Acknowledgments
+```
+ifconfig -a
+```
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+Complete the folowing instruction with your adress.
+
+```
+* Wifi or Access Point : 
+roslaunch pepper_bringup pepper_full.launch nao_ip:=<ip of pepper> roscore_ip:=<pc ip> network_interface:=wlan0
+
+* Ethernet or local :
+roslaunch pepper_bringup pepper_full.launch nao_ip:=<ip of pepper> roscore_ip:=localhost network_interface:=eth0
+```
+## Control Pepper
+
+Now ros in connected to pepper, you can illustrate it by publishing on the */cmd-vel* topic like so
+
+```
+rostopic pub -1 /cmd_vel geometry_msgs/Twist '{linear: {x: 1.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'
+```
+
+And Pepper moves forward =) .
+
+For more movement precision use the topic */move_base_simple/goal* by publishing a goal
+
+```
+rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped '{header: {stamp: now, frame_id: "map"}, pose: {position: {x: 1.0, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}'
+```
+Don’t forget the *w orientation* or Pepper going to be **out of control**.
+
+## See through Pepper
+
+For that you first need to clone a package in your workspace.
+
+```
+https://github.com/ros-perception/image_pipeline.git
+```
+
+Build with *catkin_make* and run it by : 
+
+```
+rosrun image_view image_view image:=/pepper_robot/naoqi_driveramera/front/image_raw
+```
+
+And a windows appear with the front camera of pepper.
