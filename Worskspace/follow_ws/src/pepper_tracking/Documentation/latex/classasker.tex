@@ -1,0 +1,123 @@
+\hypertarget{classasker}{}\section{asker Class Reference}
+\label{classasker}\index{asker@{asker}}
+
+
+Allow the user to add/remove image to the list of goals of Pepper.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classasker_a38f92b2656bc29658461ba95c846e63a}{asker} ()
+\item 
+void \hyperlink{classasker_a8f975187b555b7f6d47fbf4d31788d9b}{image\+Return} (const pepper\+\_\+tracking\+::image\+\_\+return \&msg)
+\begin{DoxyCompactList}\small\item\em Receive the callback of the worker concerning a goal success. \end{DoxyCompactList}\item 
+void \hyperlink{classasker_a4c549520b5964424716f28f1753517ad}{add\+Image} (sensor\+\_\+msgs\+::\+Image new\+Image, std\+::string image\+Name)
+\begin{DoxyCompactList}\small\item\em Sending image searching request to the topic. \end{DoxyCompactList}\item 
+void \hyperlink{classasker_acb07a6a00d25ae3df55ae18583ebfdb3}{remove\+Image} (std\+::string image\+Name)
+\begin{DoxyCompactList}\small\item\em When an image found is receive, publish the success. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allow the user to add/remove image to the list of goals of Pepper. 
+
+Definition at line 27 of file asker.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{asker@{asker}!asker@{asker}}
+\index{asker@{asker}!asker@{asker}}
+\subsubsection[{\texorpdfstring{asker()}{asker()}}]{\setlength{\rightskip}{0pt plus 5cm}asker\+::asker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classasker_a38f92b2656bc29658461ba95c846e63a}{}\label{classasker_a38f92b2656bc29658461ba95c846e63a}
+
+
+Definition at line 33 of file asker.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{asker@{asker}!add\+Image@{add\+Image}}
+\index{add\+Image@{add\+Image}!asker@{asker}}
+\subsubsection[{\texorpdfstring{add\+Image(sensor\+\_\+msgs\+::\+Image new\+Image, std\+::string image\+Name)}{addImage(sensor_msgs::Image newImage, std::string imageName)}}]{\setlength{\rightskip}{0pt plus 5cm}void asker\+::add\+Image (
+\begin{DoxyParamCaption}
+\item[{sensor\+\_\+msgs\+::\+Image}]{new\+Image, }
+\item[{std\+::string}]{image\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classasker_a4c549520b5964424716f28f1753517ad}{}\label{classasker_a4c549520b5964424716f28f1753517ad}
+
+
+Sending image searching request to the topic. 
+
+Other function
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Image} & The image on a sensor\+\_\+msgs\+::\+Image format \\
+\hline
+{\em image\+Name} & Used as id for the new image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file asker.\+cpp.
+
+\index{asker@{asker}!image\+Return@{image\+Return}}
+\index{image\+Return@{image\+Return}!asker@{asker}}
+\subsubsection[{\texorpdfstring{image\+Return(const pepper\+\_\+tracking\+::image\+\_\+return \&msg)}{imageReturn(const pepper_tracking::image_return &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void asker\+::image\+Return (
+\begin{DoxyParamCaption}
+\item[{const pepper\+\_\+tracking\+::image\+\_\+return \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classasker_a8f975187b555b7f6d47fbf4d31788d9b}{}\label{classasker_a8f975187b555b7f6d47fbf4d31788d9b}
+
+
+Receive the callback of the worker concerning a goal success. 
+
+Subcriber Call\+Back
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Custom msg from this package, pepper\+\_\+tracking/image\+\_\+return.\+msg \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file asker.\+cpp.
+
+\index{asker@{asker}!remove\+Image@{remove\+Image}}
+\index{remove\+Image@{remove\+Image}!asker@{asker}}
+\subsubsection[{\texorpdfstring{remove\+Image(std\+::string image\+Name)}{removeImage(std::string imageName)}}]{\setlength{\rightskip}{0pt plus 5cm}void asker\+::remove\+Image (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{image\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classasker_acb07a6a00d25ae3df55ae18583ebfdb3}{}\label{classasker_acb07a6a00d25ae3df55ae18583ebfdb3}
+
+
+When an image found is receive, publish the success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Name} & Used as id for the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file asker.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mis/follow\+\_\+ws/src/pepper\+\_\+tracking/src/\hyperlink{asker_8cpp}{asker.\+cpp}\end{DoxyCompactItemize}

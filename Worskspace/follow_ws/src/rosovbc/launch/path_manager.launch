@@ -1,0 +1,35 @@
+<launch>
+  <include file="$(find ueye_cam)/launch/rgb8.launch"/>
+  <node name="RosAria" pkg="rosaria" type="RosAria"/>
+ <!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="joy_node" >
+    <param name="dev" type="string" value="/dev/input/js1" />
+    <param name="deadzone" value="0.08" />
+  </node>
+
+ <!-- Axes -->
+  <param name="axis_linear" value="1" type="int"/>
+  <param name="axis_angular" value="0" type="int"/>
+  <param name="scale_linear" value="0.1" type="double"/>
+  <param name="scale_angular" value="0.1" type="double"/>
+
+ <!-- Parameters Acquisition of Visual Memory -->
+
+  <param name="error_threshold" value="0.06" type="double"/>
+  <param name="ratio_vel_threshold" value="25.0" type="double"/>	
+  <param name="diff_vel_threshold" value="1e-3" type="double"/>	
+  <param name="max_iter_threshold" value="50" type="int"/>	
+
+
+  <node pkg="my_package" type="teleop_robot" name="teleop_robot"/>
+
+  <node name="path_manager" pkg="my_package" type="path_manager"/>
+  <param name="cameraTopic" type="string" value="/camera/image_raw"/> 
+  <param name="robotTopic" type="string" value="/RosAria/cmd_vel"/>
+  <param name="joystickMovements" type="string" value="/RosAria/cmd_vel"/>
+  <param name="logs" type="string" value="/home/yalj/catkin_ws/src/my_package/logs/"/>
+  <param name="data" type="string" value="/home/yalj/catkin_ws/src/my_package/data/"/>
+</launch>
+
+

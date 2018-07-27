@@ -1,0 +1,37 @@
+<launch>
+  <include file="$(find ueye_cam)/launch/rgb8.launch"/>
+  <node name="RosAria" pkg="rosaria" type="RosAria"/>
+  <node pkg="my_package" type="teleop_robot" name="teleop_robot"/>
+  <node name="visual_path_following_with_pure_rotation" pkg="my_package" type="visual_path_following_with_pure_rotation"/>
+  <param name="cameraTopic" type="string" value="/camera/image_raw"/> 
+  <param name="robotTopic" type="string" value="/RosAria/cmd_vel"/>
+  <param name="visualServoMovements" type="string" value="/RosAria/cmd_vel"/>
+  <!-- without MEtimator
+<param name="error_threshold" type="double" value="0.1"/>
+-->
+
+  <!-- with MEtimator -->
+<param name="error_threshold" type="double" value="0.02"/>
+
+<param name="lambda" type="double" value="15"/>
+
+<param name="mu" type="double" value="0.001"/>
+
+ <!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="joy_node" >
+    <param name="dev" type="string" value="/dev/input/js1" />
+    <param name="deadzone" value="0.06" />
+  </node>
+
+ <!-- Axes -->
+  <param name="axis_linear" value="1" type="int"/>
+  <param name="axis_angular" value="0" type="int"/>
+  <param name="scale_linear" value="0.11" type="double"/>
+  <param name="scale_angular" value="0.11" type="double"/>
+
+  <param name="logs" type="string" value="/home/yalj/catkin_ws/src/my_package/logs/"/>
+  <param name="data" type="string" value="/home/yalj/catkin_ws/src/my_package/data/"/>
+</launch>
+
+

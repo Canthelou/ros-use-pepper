@@ -1,0 +1,9 @@
+<launch>
+  <!-- Machine declaration -->
+  <machine name="PC" address="192.168.1.1" env-loader="/home/mis-pr/Developpement/catkin_ws/devel/env.sh" user="mis-pr" default="true"/>
+  <machine name="wheelchair" address="192.168.1.2" env-loader="/home/pi/isi4nave_ws_feego/devel/env.sh" user="pi" default="false" timeout="60"/>
+
+  <!-- wheelchair -->
+  <node machine="wheelchair" name="wheelchair_control" pkg="wheelchair_control" type="wheelchair_control" />
+  
+</launch>

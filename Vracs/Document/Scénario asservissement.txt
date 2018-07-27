@@ -1,0 +1,40 @@
+1. Avec un Pepper immobile (par mon launchfile):
+	roslaunch pepper_launch_withoutALife.launch
+
+
+OU
+
+1. Avec un Pepper mobile (Autonomous life off only) :
+
+	Autonomous life off, kill le process lors du réveil de pepper : roslaunch pepper_dcm_bringup pepper_bringup.launch robot_ip:=$NAO_IP roscore_ip:=localhost network_interface:=enp0s31f6
+
+
+	Connexion à Pepper : roslaunch demo_control pepper_launch_lagadic.launch
+
+
+	Début du contre mouvement : rostopic pub -1 /joint_angles naoqi_bridge_msgs/JointAnglesWithSpeed '{header: auto, joint_names: ["HipRoll","HipPitch","KneePitch","HeadPitch","HeadYaw","RShoulderPitch","RShoulderRoll","RElbowYaw","RElbowRoll","RWristYaw","RHand","LShoulderPitch","LShoulderRoll","LElbowYaw","LElbowRoll","LWristYaw","LHand"], joint_angles: [0,0,0,-0.60,0,1.75,0,1.5,0,0,0.75,1.75,0,-1.5,0,0,0.75], speed: 0.1}'
+	
+		OU s'il existe un alias
+	dans le .bashrc -> ex: pepper-droit
+
+
+
+
+
+2. roslaunch rosovbc desired_image_manager.launch
+
+
+3. Bouger pepper avec mon package : rosrun first-control pub-square
+	
+	OU
+   
+   avec : rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+   
+
+4. roslaunch rosovbc visual_servoing.launch
+
+
+5. rostopic pub -1 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
+	
+	OU s'il existe un alias
+	dans le .bashrc -> ex: stop

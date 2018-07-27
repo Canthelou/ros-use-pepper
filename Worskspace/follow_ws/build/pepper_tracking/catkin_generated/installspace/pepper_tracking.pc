@@ -1,0 +1,8 @@
+prefix=/home/mis/follow_ws/install
+
+Name: pepper_tracking
+Description: Description of pepper_tracking
+Version: 0.0.0
+Cflags: -I/home/mis/follow_ws/install/include
+Libs: -L/home/mis/follow_ws/install/lib 
+Requires: message_runtime

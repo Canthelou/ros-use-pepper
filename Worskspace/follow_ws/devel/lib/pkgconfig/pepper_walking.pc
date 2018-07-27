@@ -1,0 +1,8 @@
+prefix=/home/mis/follow_ws/devel
+
+Name: pepper_walking
+Description: Description of pepper_walking
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mis/follow_ws/devel/lib 
+Requires: 

@@ -1,0 +1,27 @@
+<launch>
+  <include file="$(find ueye_cam)/launch/rgb8.launch"/>
+  <include file="$(find openni_launch)/launch/openni.launch">
+  	<arg name="depth_registration" value="True" />
+  </include>
+  <node name="RosAria" pkg="rosaria" type="RosAria"/>
+  <node name="visual_servoing_with_kinect" pkg="my_package" type="visual_servoing_with_kinect"/>
+
+  <param name="cameraTopic" type="string" value="/camera/image_raw"/> 
+  <param name="visualServoMovements" type="string" value="/RosAria/cmd_vel"/>
+
+
+  <!-- without MEtimator-->
+<param name="error_threshold" type="double" value="0.1"/>
+  <!-- with MEtimator
+<param name="error_threshold" type="double" value="0.02"/>
+ -->
+
+
+ <param name="lambda" type="double" value="10"/>
+  <param name="mu" type="double" value="0.001"/>
+
+  <param name="logs" type="string" value="/home/yalj/catkin_ws/src/my_package/logs/"/>
+  <param name="data" type="string" value="/home/yalj/catkin_ws/src/my_package/data/"/>
+</launch>
+
+

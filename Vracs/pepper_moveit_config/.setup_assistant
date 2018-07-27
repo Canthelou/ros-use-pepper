@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: naoqi_driver
+    relative_path: share/urdf/pepper.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/JulietteY20MP.srdf
+  CONFIG:
+    author_name: bob dylan
+    author_email: bob.dylan@outlook.fr
+    generated_timestamp: 1530104164

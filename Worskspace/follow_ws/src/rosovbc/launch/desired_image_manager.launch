@@ -1,0 +1,6 @@
+<launch>
+  <node name="desired_image_manager" pkg="rosovbc" type="desired_image_manager"/>
+  <param name="cameraTopic" type="string" value="/camera/image_raw"/>
+  <param name="logs" type="string" value="/home/mis/kinet_ws/src/rosovbc/logs/"/>
+  <param name="data" type="string" value="/home/mis/kinet_ws/src/rosovbc/data/"/>	
+</launch>

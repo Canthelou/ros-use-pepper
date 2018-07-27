@@ -1,0 +1,229 @@
+\hypertarget{classauto_walking}{}\section{auto\+Walking Class Reference}
+\label{classauto_walking}\index{auto\+Walking@{auto\+Walking}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classauto_walking_a6b81e2c604bbcf24bd34b5ddf7ea8270}{auto\+Walking} ()
+\item 
+void \hyperlink{classauto_walking_ae0f17930f80f5bf8e11bc246240b75a2}{Touch\+Head} (const std\+\_\+msgs\+::\+Int8 \&msg)
+\begin{DoxyCompactList}\small\item\em Allow to have a sort of H\+IM on the head of Pepper. \end{DoxyCompactList}\item 
+void \hyperlink{classauto_walking_a01b4702802806fc58ed344c226576535}{Front\+Distance} (const std\+\_\+msgs\+::\+Bool \&msg)
+\begin{DoxyCompactList}\small\item\em Recup the front distance on the sonar. \end{DoxyCompactList}\item 
+void \hyperlink{classauto_walking_a78e3b78ca7050490278b96474ffebb71}{Back\+Distance} (const std\+\_\+msgs\+::\+Bool \&msg)
+\begin{DoxyCompactList}\small\item\em Recup the back distance on the sonar. \end{DoxyCompactList}\item 
+void \hyperlink{classauto_walking_a383e14e4397ffeda34d43f9ebe94f52d}{Walking\+Call\+Back} (const ros\+::\+Timer\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Gesture of the possible movement, call each 0.\+1 seconde. \end{DoxyCompactList}\item 
+void \hyperlink{classauto_walking_a38c0927b35e47c93d1d06ce57919f2e8}{Rotate\+Call\+Back} (const ros\+::\+Timer\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Find the better way to go after a stop. \end{DoxyCompactList}\item 
+void \hyperlink{classauto_walking_add0dcc1657a0bc83fb487134883ca3de}{Stop\+Movement} ()
+\begin{DoxyCompactList}\small\item\em Initialise and allow the programme to stop the movement. \end{DoxyCompactList}\item 
+void \hyperlink{classauto_walking_a5eb7c4e92d91f27e830497c8ccfca973}{Go\+Forward} ()
+\begin{DoxyCompactList}\small\item\em Initialise and allow the programme to go forward. \end{DoxyCompactList}\item 
+void \hyperlink{classauto_walking_ab219370e461e832dafa9d3e48356f1b7}{Go\+Backward} ()
+\begin{DoxyCompactList}\small\item\em Initialise and allow the programme to go backward. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file walking\+\_\+autonomous.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{auto\+Walking@{auto\+Walking}!auto\+Walking@{auto\+Walking}}
+\index{auto\+Walking@{auto\+Walking}!auto\+Walking@{auto\+Walking}}
+\subsubsection[{\texorpdfstring{auto\+Walking()}{autoWalking()}}]{\setlength{\rightskip}{0pt plus 5cm}auto\+Walking\+::auto\+Walking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classauto_walking_a6b81e2c604bbcf24bd34b5ddf7ea8270}{}\label{classauto_walking_a6b81e2c604bbcf24bd34b5ddf7ea8270}
+
+
+Definition at line 24 of file walking\+\_\+autonomous.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{auto\+Walking@{auto\+Walking}!Back\+Distance@{Back\+Distance}}
+\index{Back\+Distance@{Back\+Distance}!auto\+Walking@{auto\+Walking}}
+\subsubsection[{\texorpdfstring{Back\+Distance(const std\+\_\+msgs\+::\+Bool \&msg)}{BackDistance(const std_msgs::Bool &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void auto\+Walking\+::\+Back\+Distance (
+\begin{DoxyParamCaption}
+\item[{const std\+\_\+msgs\+::\+Bool \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classauto_walking_a78e3b78ca7050490278b96474ffebb71}{}\label{classauto_walking_a78e3b78ca7050490278b96474ffebb71}
+
+
+Recup the back distance on the sonar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Input message from the Topic /demo\+\_\+control/sonar/back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file walking\+\_\+autonomous.\+cpp.
+
+\index{auto\+Walking@{auto\+Walking}!Front\+Distance@{Front\+Distance}}
+\index{Front\+Distance@{Front\+Distance}!auto\+Walking@{auto\+Walking}}
+\subsubsection[{\texorpdfstring{Front\+Distance(const std\+\_\+msgs\+::\+Bool \&msg)}{FrontDistance(const std_msgs::Bool &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void auto\+Walking\+::\+Front\+Distance (
+\begin{DoxyParamCaption}
+\item[{const std\+\_\+msgs\+::\+Bool \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classauto_walking_a01b4702802806fc58ed344c226576535}{}\label{classauto_walking_a01b4702802806fc58ed344c226576535}
+
+
+Recup the front distance on the sonar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Input message from the Topic /demo\+\_\+control/sonar/front \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file walking\+\_\+autonomous.\+cpp.
+
+\index{auto\+Walking@{auto\+Walking}!Go\+Backward@{Go\+Backward}}
+\index{Go\+Backward@{Go\+Backward}!auto\+Walking@{auto\+Walking}}
+\subsubsection[{\texorpdfstring{Go\+Backward()}{GoBackward()}}]{\setlength{\rightskip}{0pt plus 5cm}void auto\+Walking\+::\+Go\+Backward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classauto_walking_ab219370e461e832dafa9d3e48356f1b7}{}\label{classauto_walking_ab219370e461e832dafa9d3e48356f1b7}
+
+
+Initialise and allow the programme to go backward. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 214 of file walking\+\_\+autonomous.\+cpp.
+
+\index{auto\+Walking@{auto\+Walking}!Go\+Forward@{Go\+Forward}}
+\index{Go\+Forward@{Go\+Forward}!auto\+Walking@{auto\+Walking}}
+\subsubsection[{\texorpdfstring{Go\+Forward()}{GoForward()}}]{\setlength{\rightskip}{0pt plus 5cm}void auto\+Walking\+::\+Go\+Forward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classauto_walking_a5eb7c4e92d91f27e830497c8ccfca973}{}\label{classauto_walking_a5eb7c4e92d91f27e830497c8ccfca973}
+
+
+Initialise and allow the programme to go forward. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 199 of file walking\+\_\+autonomous.\+cpp.
+
+\index{auto\+Walking@{auto\+Walking}!Rotate\+Call\+Back@{Rotate\+Call\+Back}}
+\index{Rotate\+Call\+Back@{Rotate\+Call\+Back}!auto\+Walking@{auto\+Walking}}
+\subsubsection[{\texorpdfstring{Rotate\+Call\+Back(const ros\+::\+Timer\+Event \&event)}{RotateCallBack(const ros::TimerEvent &event)}}]{\setlength{\rightskip}{0pt plus 5cm}void auto\+Walking\+::\+Rotate\+Call\+Back (
+\begin{DoxyParamCaption}
+\item[{const ros\+::\+Timer\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classauto_walking_a38c0927b35e47c93d1d06ce57919f2e8}{}\label{classauto_walking_a38c0927b35e47c93d1d06ce57919f2e8}
+
+
+Find the better way to go after a stop. 
+
+evaluate obstacle at Left and Right with a cooldown of 10 secondes waiting until the rotation is finished
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Necessary for the timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 148 of file walking\+\_\+autonomous.\+cpp.
+
+\index{auto\+Walking@{auto\+Walking}!Stop\+Movement@{Stop\+Movement}}
+\index{Stop\+Movement@{Stop\+Movement}!auto\+Walking@{auto\+Walking}}
+\subsubsection[{\texorpdfstring{Stop\+Movement()}{StopMovement()}}]{\setlength{\rightskip}{0pt plus 5cm}void auto\+Walking\+::\+Stop\+Movement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classauto_walking_add0dcc1657a0bc83fb487134883ca3de}{}\label{classauto_walking_add0dcc1657a0bc83fb487134883ca3de}
+
+
+Initialise and allow the programme to stop the movement. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 183 of file walking\+\_\+autonomous.\+cpp.
+
+\index{auto\+Walking@{auto\+Walking}!Touch\+Head@{Touch\+Head}}
+\index{Touch\+Head@{Touch\+Head}!auto\+Walking@{auto\+Walking}}
+\subsubsection[{\texorpdfstring{Touch\+Head(const std\+\_\+msgs\+::\+Int8 \&msg)}{TouchHead(const std_msgs::Int8 &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void auto\+Walking\+::\+Touch\+Head (
+\begin{DoxyParamCaption}
+\item[{const std\+\_\+msgs\+::\+Int8 \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classauto_walking_ae0f17930f80f5bf8e11bc246240b75a2}{}\label{classauto_walking_ae0f17930f80f5bf8e11bc246240b75a2}
+
+
+Allow to have a sort of H\+IM on the head of Pepper. 
+
+Subcriber Call\+Back
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Input message from the Topic /demo\+\_\+control/head\+\_\+touch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file walking\+\_\+autonomous.\+cpp.
+
+\index{auto\+Walking@{auto\+Walking}!Walking\+Call\+Back@{Walking\+Call\+Back}}
+\index{Walking\+Call\+Back@{Walking\+Call\+Back}!auto\+Walking@{auto\+Walking}}
+\subsubsection[{\texorpdfstring{Walking\+Call\+Back(const ros\+::\+Timer\+Event \&event)}{WalkingCallBack(const ros::TimerEvent &event)}}]{\setlength{\rightskip}{0pt plus 5cm}void auto\+Walking\+::\+Walking\+Call\+Back (
+\begin{DoxyParamCaption}
+\item[{const ros\+::\+Timer\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classauto_walking_a383e14e4397ffeda34d43f9ebe94f52d}{}\label{classauto_walking_a383e14e4397ffeda34d43f9ebe94f52d}
+
+
+Gesture of the possible movement, call each 0.\+1 seconde. 
+
+Timer Call\+Back
+
+Go forward/backward if and while there are no obstacles Ask to find a new way when it\textquotesingle{}s blocked
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Necessary for the timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file walking\+\_\+autonomous.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mis/follow\+\_\+ws/src/pepper\+\_\+walking/src/\hyperlink{walking__autonomous_8cpp}{walking\+\_\+autonomous.\+cpp}\end{DoxyCompactItemize}

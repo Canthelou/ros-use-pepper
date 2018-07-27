@@ -1,0 +1,47 @@
+<launch>
+ <include file="$(find ueye_cam)/launch/rgb8.launch"/>
+ <node name="RosAria" pkg="rosaria" type="RosAria">
+   <!-- <param name="port" value="192.168.1.32:7171" /> -->
+  </node>
+
+
+<!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="joy_node" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.08" />
+  </node>
+
+ <!-- Axes -->
+  <param name="axis_linear" value="1" type="int"/>
+  <param name="axis_angular" value="0" type="int"/>
+  <param name="scale_linear" value="0.1" type="double"/>
+  <param name="scale_angular" value="0.1" type="double"/>
+
+
+  <node pkg="my_package" type="teleop_robot" name="teleop_robot"/>
+
+
+<!-- Simple VS 
+  <param name="lambda" value="5" type="double"/>
+  <param name="mu" value="0.001" type="double"/>
+-->
+
+<!-- robust VS (with M-Estimation) -->
+  <param name="lambda" value="100" type="double"/>
+  <param name="mu" value="0.1" type="double"/>
+
+
+  <param name="DI" value="10" type="int"/>
+  <param name="DJ" value="10" type="int"/>
+  <param name="NBRI" value="368" type="int"/>
+  <param name="NBRJ" value="368" type="int"/>
+
+  <node name="visual_path_generation" pkg="my_package" type="visual_path_generation" output="screen"/>
+  <param name="cameraTopic" type="string" value="/camera/image_raw"/> 
+  <param name="outputVelocityTopic" type="string" value="/RosAria/cmd_vel"/>
+  <param name="joystickMovements" type="string" value="/RosAria/cmd_vel"/>
+  <param name="logs" type="string" value="/home/yalj/catkin_ws/src/my_package/logs/"/>
+  <param name="data" type="string" value="/home/yalj/catkin_ws/src/my_package/data/"/>
+
+</launch>

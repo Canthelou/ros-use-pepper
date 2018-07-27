@@ -1,0 +1,55 @@
+<launch>
+  <!-- Necessary arg for all file -->
+  <env name="PYTHONPATH" value="$(env PYTHONPATH)" />
+
+  <arg name="nao_ip"              default="$(env NAO_IP)" />
+  <arg name="nao_port"            default="$(optenv NAO_PORT 9559)" />
+  <arg name="roscore_ip"          default="localhost" />
+  <arg name="network_interface"   default="enp0s31f6" />
+
+  <arg name="namespace"           default="pepper_robot" />
+
+  <arg name="ns" default="" /> <!-- front camera -->
+  <arg name="source" default="1" /> <!-- bottom camera -->
+  <arg name="color_space" default="13" />
+  <arg name="resolution" default="2" />
+  <arg name="frame_rate" default="30" />
+
+
+
+  <!-- Launch the pepper_bottom_camera -->
+  <!-- extrait du launch camera original lagadic -->
+  <node pkg="pepper_sensors_py" type="camera.py" name="camera" required="true" args="--pip=$(arg nao_ip) --pport=$(arg nao_port)" output="screen">
+    <param name="calibration_file_bottom" type="string" value="file://$(find pepper_launch)/share/pepper_camera_bottom_640x480.yaml"/>
+    <param name="calibration_file_top" type="string" value="file://$(find pepper_launch)/share/pepper_camera_top_640x480.yaml"/>
+    <param name="source" value="$(arg source)" />
+    <param name="color_space" value="$(arg color_space)" />
+    <param name="resolution" value="$(arg resolution)" />
+    <param name="frame_rate" value="$(arg frame_rate)" />
+    <param name="use_ros_time" value="True" />
+  </node>
+
+
+  <!-- Launch the pepper_full_launch -->
+  <!-- extrait du launch pepper_launch original lagadic -->
+
+  <!-- naoqi driver -->
+  <include file="$(find naoqi_driver)/launch/naoqi_driver.launch"  ns="$(arg namespace)" >
+    <arg name="nao_ip"            value="$(arg nao_ip)" />
+    <arg name="nao_port"          value="$(arg nao_port)" />
+    <arg name="roscore_ip"        value="$(arg roscore_ip)" />
+    <arg name="network_interface" value="$(arg network_interface)" />
+  </include>
+
+  <!-- launch pose manager -->
+<!--   <include file="$(find naoqi_pose)/launch/pose_manager.launch" ns="$(arg namespace)/pose" >
+    <arg name="nao_ip"            value="$(arg nao_ip)" />
+    <arg name="nao_port"          value="$(arg nao_port)" />
+  </include> -->
+
+  <!-- launch perception -->
+  <include file="$(find pepper_bringup)/launch/perception.launch.xml">
+    <arg name="namespace"         value="$(arg namespace)" />
+  </include>
+
+</launch>

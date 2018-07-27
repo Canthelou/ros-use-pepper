@@ -1,0 +1,5 @@
+The idea was to do the bridge between the user, pepper and ViSP.
+It's now an useless package, but there're some things interesting.
+
+the asker is asking the user for pictures and send it to the worker.
+The worker communicate with ViSP and Pepper, it search the user pictures.

@@ -1,0 +1,25 @@
+<launch>
+  <include file="$(find ueye_cam)/launch/rgb8.launch"/>
+  <node name="RosAria" pkg="rosaria" type="RosAria"/>
+
+
+  <node name="visual_path_following_with_rotation" pkg="my_package" type="visual_path_following_with_rotation" output="screen"/>
+  <param name="cameraTopic" type="string" value="/camera/image_raw"/> 
+  <param name="outputVelocityTopic" type="string" value="/RosAria/cmd_vel"/>
+
+<!-- robust VS (with M-Estimation) -->
+  <param name="lambda" value="160" type="double"/>
+  <param name="mu" value="0.001" type="double"/>
+
+
+  <param name="DI" value="10" type="int"/>
+  <param name="DJ" value="10" type="int"/>
+  <param name="NBRI" value="368" type="int"/>
+  <param name="NBRJ" value="368" type="int"/>
+
+
+  <param name="logs" type="string" value="/home/yalj/catkin_ws/src/my_package/logs/"/>
+  <param name="data" type="string" value="/home/yalj/catkin_ws/src/my_package/data/"/>
+</launch>
+
+

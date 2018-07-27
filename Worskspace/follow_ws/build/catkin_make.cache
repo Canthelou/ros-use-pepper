@@ -1,0 +1,2 @@
+pepper_launch:pepper_tracking:pepper_walking
+-DCATKIN_DEVEL_PREFIX=/home/mis/follow_ws/devel -DCMAKE_INSTALL_PREFIX=/home/mis/follow_ws/install -G Unix Makefiles

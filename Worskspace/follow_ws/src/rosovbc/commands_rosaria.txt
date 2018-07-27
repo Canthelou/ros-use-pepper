@@ -1,0 +1,5 @@
+#### POSE  
+rostopic pub -1 /RosAria/pose geometry_msgs/Pose '{position:  {x: 1.0, y: 0.0, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}}'
+
+#### VELOCITY
+rostopic pub -1 /RosAria/cmd_vel geometry_msgs/Twist '{linear:  {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'

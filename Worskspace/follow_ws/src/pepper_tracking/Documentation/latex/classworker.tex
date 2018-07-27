@@ -1,0 +1,146 @@
+\hypertarget{classworker}{}\section{worker Class Reference}
+\label{classworker}\index{worker@{worker}}
+
+
+Allow Pepper to move and detect user wanted image.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classworker_a7bd845810dd8185384e37405ef322b7d}{worker} ()
+\item 
+void \hyperlink{classworker_a8f0d3d3cbd7418830cd77a0bba55465b}{image\+Request} (const pepper\+\_\+tracking\+::image\+\_\+request \&msg)
+\begin{DoxyCompactList}\small\item\em Receive the new image request to find in the area. \end{DoxyCompactList}\item 
+void \hyperlink{classworker_a24193ed917b818ef20de0240499468fc}{image\+Raw} (const sensor\+\_\+msgs\+::\+Image \&msg)
+\begin{DoxyCompactList}\small\item\em Allow to process the image\+\_\+raw of Pepper. \end{DoxyCompactList}\item 
+void \hyperlink{classworker_a2accc661aa0de65223603bfff5f69b27}{request\+To\+Visp} (sensor\+\_\+msgs\+::\+Image image\+Goal, sensor\+\_\+msgs\+::\+Image image\+Nao)
+\begin{DoxyCompactList}\small\item\em In charge of doing the request to compare both image to V\+Isp. \end{DoxyCompactList}\item 
+void \hyperlink{classworker_a27863e3e984867effbc8accfb0d034f8}{image\+Found} (std\+::string image\+Name)
+\begin{DoxyCompactList}\small\item\em When Visp say that two image are similar, publish the success. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allow Pepper to move and detect user wanted image. 
+
+Definition at line 26 of file worker.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{worker@{worker}!worker@{worker}}
+\index{worker@{worker}!worker@{worker}}
+\subsubsection[{\texorpdfstring{worker()}{worker()}}]{\setlength{\rightskip}{0pt plus 5cm}worker\+::worker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classworker_a7bd845810dd8185384e37405ef322b7d}{}\label{classworker_a7bd845810dd8185384e37405ef322b7d}
+
+
+Definition at line 29 of file worker.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{worker@{worker}!image\+Found@{image\+Found}}
+\index{image\+Found@{image\+Found}!worker@{worker}}
+\subsubsection[{\texorpdfstring{image\+Found(std\+::string image\+Name)}{imageFound(std::string imageName)}}]{\setlength{\rightskip}{0pt plus 5cm}void worker\+::image\+Found (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{image\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classworker_a27863e3e984867effbc8accfb0d034f8}{}\label{classworker_a27863e3e984867effbc8accfb0d034f8}
+
+
+When Visp say that two image are similar, publish the success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Name} & Id/\+Name of the image found to inform the topic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file worker.\+cpp.
+
+\index{worker@{worker}!image\+Raw@{image\+Raw}}
+\index{image\+Raw@{image\+Raw}!worker@{worker}}
+\subsubsection[{\texorpdfstring{image\+Raw(const sensor\+\_\+msgs\+::\+Image \&msg)}{imageRaw(const sensor_msgs::Image &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void worker\+::image\+Raw (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Image \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classworker_a24193ed917b818ef20de0240499468fc}{}\label{classworker_a24193ed917b818ef20de0240499468fc}
+
+
+Allow to process the image\+\_\+raw of Pepper. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Pepper camera output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file worker.\+cpp.
+
+\index{worker@{worker}!image\+Request@{image\+Request}}
+\index{image\+Request@{image\+Request}!worker@{worker}}
+\subsubsection[{\texorpdfstring{image\+Request(const pepper\+\_\+tracking\+::image\+\_\+request \&msg)}{imageRequest(const pepper_tracking::image_request &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void worker\+::image\+Request (
+\begin{DoxyParamCaption}
+\item[{const pepper\+\_\+tracking\+::image\+\_\+request \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classworker_a8f0d3d3cbd7418830cd77a0bba55465b}{}\label{classworker_a8f0d3d3cbd7418830cd77a0bba55465b}
+
+
+Receive the new image request to find in the area. 
+
+Subcriber Call\+Back
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Custom msg from this package, pepper\+\_\+tracking/image\+\_\+request.\+msg \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file worker.\+cpp.
+
+\index{worker@{worker}!request\+To\+Visp@{request\+To\+Visp}}
+\index{request\+To\+Visp@{request\+To\+Visp}!worker@{worker}}
+\subsubsection[{\texorpdfstring{request\+To\+Visp(sensor\+\_\+msgs\+::\+Image image\+Goal, sensor\+\_\+msgs\+::\+Image image\+Nao)}{requestToVisp(sensor_msgs::Image imageGoal, sensor_msgs::Image imageNao)}}]{\setlength{\rightskip}{0pt plus 5cm}void worker\+::request\+To\+Visp (
+\begin{DoxyParamCaption}
+\item[{sensor\+\_\+msgs\+::\+Image}]{image\+Goal, }
+\item[{sensor\+\_\+msgs\+::\+Image}]{image\+Nao}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classworker_a2accc661aa0de65223603bfff5f69b27}{}\label{classworker_a2accc661aa0de65223603bfff5f69b27}
+
+
+In charge of doing the request to compare both image to V\+Isp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Goal} & All image that we want to find, one by one \\
+\hline
+{\em image\+Nao} & A frame of pepper vision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file worker.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mis/follow\+\_\+ws/src/pepper\+\_\+tracking/src/\hyperlink{worker_8cpp}{worker.\+cpp}\end{DoxyCompactItemize}

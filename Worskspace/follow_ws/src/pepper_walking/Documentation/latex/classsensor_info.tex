@@ -1,0 +1,178 @@
+\hypertarget{classsensor_info}{}\section{sensor\+Info Class Reference}
+\label{classsensor_info}\index{sensor\+Info@{sensor\+Info}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsensor_info_a9a78f793919453ef7062a4be8dfc6693}{sensor\+Info} ()
+\item 
+void \hyperlink{classsensor_info_a3c05bf886c30bd9a58c267deac8a41c6}{touch\+Head} (const naoqi\+\_\+bridge\+\_\+msgs\+::\+Head\+Touch \&msg)
+\begin{DoxyCompactList}\small\item\em Allow to have a sort of H\+IM on the head of Pepper. \end{DoxyCompactList}\item 
+void \hyperlink{classsensor_info_a387ea702718ef6c83c4b8d34135d69dd}{sonar\+Front} (const sensor\+\_\+msgs\+::\+Range \&msg)
+\begin{DoxyCompactList}\small\item\em Recup the front distance on the sonar. \end{DoxyCompactList}\item 
+void \hyperlink{classsensor_info_aaa624fac38ad4a88acfa66f21a223238}{sonar\+Back} (const sensor\+\_\+msgs\+::\+Range \&msg)
+\begin{DoxyCompactList}\small\item\em Recup the back distance on the sonar. \end{DoxyCompactList}\item 
+void \hyperlink{classsensor_info_a0d8c9bb41d21a8d89330bd14fce5a6a2}{head\+Touch\+Call\+Back} (const ros\+::\+Timer\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Avoid to have too much messages on the pepper topic /speech. \end{DoxyCompactList}\item 
+void \hyperlink{classsensor_info_a0a465025f366c28cce5d69da969e40e1}{sonar\+Front\+Call\+Back} (const ros\+::\+Timer\+Event \&event)
+\item 
+void \hyperlink{classsensor_info_a4f399406a35121ae1172d341e84c2531}{sonar\+Back\+Call\+Back} (const ros\+::\+Timer\+Event \&event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file walking\+\_\+sensor\+\_\+return.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{sensor\+Info@{sensor\+Info}!sensor\+Info@{sensor\+Info}}
+\index{sensor\+Info@{sensor\+Info}!sensor\+Info@{sensor\+Info}}
+\subsubsection[{\texorpdfstring{sensor\+Info()}{sensorInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}sensor\+Info\+::sensor\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsensor_info_a9a78f793919453ef7062a4be8dfc6693}{}\label{classsensor_info_a9a78f793919453ef7062a4be8dfc6693}
+
+
+Definition at line 25 of file walking\+\_\+sensor\+\_\+return.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{sensor\+Info@{sensor\+Info}!head\+Touch\+Call\+Back@{head\+Touch\+Call\+Back}}
+\index{head\+Touch\+Call\+Back@{head\+Touch\+Call\+Back}!sensor\+Info@{sensor\+Info}}
+\subsubsection[{\texorpdfstring{head\+Touch\+Call\+Back(const ros\+::\+Timer\+Event \&event)}{headTouchCallBack(const ros::TimerEvent &event)}}]{\setlength{\rightskip}{0pt plus 5cm}void sensor\+Info\+::head\+Touch\+Call\+Back (
+\begin{DoxyParamCaption}
+\item[{const ros\+::\+Timer\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsensor_info_a0d8c9bb41d21a8d89330bd14fce5a6a2}{}\label{classsensor_info_a0d8c9bb41d21a8d89330bd14fce5a6a2}
+
+
+Avoid to have too much messages on the pepper topic /speech. 
+
+Timer Call\+Back
+
+Exe every seconde Say something when the head is touch
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Necessary for the timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Exe every 3 seconde Say something if there\textquotesingle{}s an obstacle
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Necessary for the timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file walking\+\_\+sensor\+\_\+return.\+cpp.
+
+\index{sensor\+Info@{sensor\+Info}!sonar\+Back@{sonar\+Back}}
+\index{sonar\+Back@{sonar\+Back}!sensor\+Info@{sensor\+Info}}
+\subsubsection[{\texorpdfstring{sonar\+Back(const sensor\+\_\+msgs\+::\+Range \&msg)}{sonarBack(const sensor_msgs::Range &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void sensor\+Info\+::sonar\+Back (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Range \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsensor_info_aaa624fac38ad4a88acfa66f21a223238}{}\label{classsensor_info_aaa624fac38ad4a88acfa66f21a223238}
+
+
+Recup the back distance on the sonar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Input message from the Topic /pepper\+\_\+robot/naoqi\+\_\+driver/sonar/back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file walking\+\_\+sensor\+\_\+return.\+cpp.
+
+\index{sensor\+Info@{sensor\+Info}!sonar\+Back\+Call\+Back@{sonar\+Back\+Call\+Back}}
+\index{sonar\+Back\+Call\+Back@{sonar\+Back\+Call\+Back}!sensor\+Info@{sensor\+Info}}
+\subsubsection[{\texorpdfstring{sonar\+Back\+Call\+Back(const ros\+::\+Timer\+Event \&event)}{sonarBackCallBack(const ros::TimerEvent &event)}}]{\setlength{\rightskip}{0pt plus 5cm}void sensor\+Info\+::sonar\+Back\+Call\+Back (
+\begin{DoxyParamCaption}
+\item[{const ros\+::\+Timer\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsensor_info_a4f399406a35121ae1172d341e84c2531}{}\label{classsensor_info_a4f399406a35121ae1172d341e84c2531}
+
+
+Definition at line 154 of file walking\+\_\+sensor\+\_\+return.\+cpp.
+
+\index{sensor\+Info@{sensor\+Info}!sonar\+Front@{sonar\+Front}}
+\index{sonar\+Front@{sonar\+Front}!sensor\+Info@{sensor\+Info}}
+\subsubsection[{\texorpdfstring{sonar\+Front(const sensor\+\_\+msgs\+::\+Range \&msg)}{sonarFront(const sensor_msgs::Range &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void sensor\+Info\+::sonar\+Front (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Range \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsensor_info_a387ea702718ef6c83c4b8d34135d69dd}{}\label{classsensor_info_a387ea702718ef6c83c4b8d34135d69dd}
+
+
+Recup the front distance on the sonar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Input message from the Topic /pepper\+\_\+robot/naoqi\+\_\+driver/sonar/front \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file walking\+\_\+sensor\+\_\+return.\+cpp.
+
+\index{sensor\+Info@{sensor\+Info}!sonar\+Front\+Call\+Back@{sonar\+Front\+Call\+Back}}
+\index{sonar\+Front\+Call\+Back@{sonar\+Front\+Call\+Back}!sensor\+Info@{sensor\+Info}}
+\subsubsection[{\texorpdfstring{sonar\+Front\+Call\+Back(const ros\+::\+Timer\+Event \&event)}{sonarFrontCallBack(const ros::TimerEvent &event)}}]{\setlength{\rightskip}{0pt plus 5cm}void sensor\+Info\+::sonar\+Front\+Call\+Back (
+\begin{DoxyParamCaption}
+\item[{const ros\+::\+Timer\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsensor_info_a0a465025f366c28cce5d69da969e40e1}{}\label{classsensor_info_a0a465025f366c28cce5d69da969e40e1}
+
+
+Definition at line 132 of file walking\+\_\+sensor\+\_\+return.\+cpp.
+
+\index{sensor\+Info@{sensor\+Info}!touch\+Head@{touch\+Head}}
+\index{touch\+Head@{touch\+Head}!sensor\+Info@{sensor\+Info}}
+\subsubsection[{\texorpdfstring{touch\+Head(const naoqi\+\_\+bridge\+\_\+msgs\+::\+Head\+Touch \&msg)}{touchHead(const naoqi_bridge_msgs::HeadTouch &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void sensor\+Info\+::touch\+Head (
+\begin{DoxyParamCaption}
+\item[{const naoqi\+\_\+bridge\+\_\+msgs\+::\+Head\+Touch \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsensor_info_a3c05bf886c30bd9a58c267deac8a41c6}{}\label{classsensor_info_a3c05bf886c30bd9a58c267deac8a41c6}
+
+
+Allow to have a sort of H\+IM on the head of Pepper. 
+
+Subcriber Call\+Back
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Input message from the Topic /pepper\+\_\+robot/naoqi\+\_\+driver/head\+\_\+touch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file walking\+\_\+sensor\+\_\+return.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mis/follow\+\_\+ws/src/pepper\+\_\+walking/src/\hyperlink{walking__sensor__return_8cpp}{walking\+\_\+sensor\+\_\+return.\+cpp}\end{DoxyCompactItemize}

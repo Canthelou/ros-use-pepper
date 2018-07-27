@@ -1,0 +1,6 @@
+roslaunch rosovbc desired_image_manager.launch
+
+roslaunch rosovbc visual_servoing.launch
+
+roslaunch rosovbc visual_servo_with_rotation.launch
+

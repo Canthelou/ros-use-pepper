@@ -1,0 +1,12 @@
+<launch>
+  
+  <node name="test1" pkg="my_package" type="test1"/>
+  <node name="RosAria" pkg="rosaria" type="RosAria"/>
+  <include file="$(find ueye_cam)/launch/rgb8.launch"/>
+  <param name="robotTopic" type="string" value="/RosAria/cmd_vel"/>
+  <param name="cameraTopic" type="string" value="/camera/image_raw"/> 
+  <param name="logs" type="string" value="/home/yalj/catkin_ws/src/my_package/logs/"/>
+  <param name="data" type="string" value="/home/yalj/catkin_ws/src/my_package/data/"/>
+</launch>
+
+

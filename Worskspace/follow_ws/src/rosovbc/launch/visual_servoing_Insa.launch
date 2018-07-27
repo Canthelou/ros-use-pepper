@@ -1,0 +1,48 @@
+<launch>
+  <!-- Machine declaration -->
+  <machine name="PC" address="192.168.1.1" env-loader="/home/mis-pr/Developpement/catkin_ws/devel/env.sh" user="mis-pr" default="true"/>
+  <machine name="wheelchair" address="192.168.1.2" env-loader="/home/pi/isi4nave_ws_feego/devel/env.sh" user="pi" default="false" timeout="60"/>
+  
+  <!-- wheelchair -->
+  <node machine="wheelchair" name="wheelchair_control" pkg="wheelchair_control" type="wheelchair_control" />
+
+  <!-- PC -->
+  <include file="$(find ueye_cam)/launch/rgb8.launch"/>
+<!--  <node name="RosAria" pkg="rosaria" type="RosAria"/> -->
+
+  <node machine="PC" name="visual_servoing" pkg="rosovbc" type="visual_servoing"/>
+  <param name="cameraTopic" type="string" value="/camera/image_raw"/> 
+<!--  <param name="robotTopic" type="string" value="/RosAria/cmd_vel"/> -->
+  <param name="robotTopic" type="string" value="/velocity_command"/>
+<!--  <param name="poseTopic" type="string" value="/RosAria/pose"/> -->
+  <param name="poseTopic" type="string" value=""/>
+<!--  <param name="visualServoMovements" type="string" value="/RosAria/cmd_vel"/> -->
+  <param name="visualServoMovements" type="string" value="/velocity_command"/>
+  <!-- without MEtimator-->
+<param name="error_threshold" type="double" value="0.1"/>
+
+
+  <!-- with MEtimator
+<param name="error_threshold" type="double" value="0.02"/>
+ -->
+
+  <param name="lambda" type="double" value="10"/>
+  <param name="mu" type="double" value="0.001"/>
+
+<!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="joy_node" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.05" />
+  </node>
+
+ <!-- Axes -->
+  <param name="axis_linear" value="1" type="int"/>
+  <param name="axis_angular" value="0" type="int"/>
+  <param name="scale_linear" value="0.11" type="double"/>
+  <param name="scale_angular" value="0.11" type="double"/>
+
+  <param name="logs" type="string" value="/home/mis-pr/Developpement/catkin_ws/src/rosovbc/logs/"/>
+  <param name="data" type="string" value="/home/mis-pr/Developpement/catkin_ws/src/rosovbc/data/"/>
+</launch>
+

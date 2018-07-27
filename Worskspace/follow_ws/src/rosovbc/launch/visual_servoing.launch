@@ -1,0 +1,36 @@
+<launch>
+
+  <node name="visual_servoing" pkg="rosovbc" type="visual_servoing"/>
+  <param name="cameraTopic" type="string" value="/camera/image_raw"/>
+  <param name="visualServoMovements" type="string" value="/cmd_vel"/>
+  <!--<param name="poseTopic" type="string" value="/move_base_simple/goal"/>-->
+  <!--<param name="visualServoMovements" type="string" value="/RosAria/cmd_vel"/>-->
+  <!-- without MEtimator-->
+  <!--<param name="error_threshold" type="double" value="0.1"/>-->
+
+
+  <!-- with MEtimator
+<param name="error_threshold" type="double" value="0.02"/>
+ -->
+
+  <param name="lambda" type="double" value="4"/>
+  <param name="mu" type="double" value="0.001"/>
+
+<!-- joy node -->
+  <!--<node respawn="true" pkg="joy"
+        type="joy_node" name="joy_node" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.05" />
+  </node>-->
+
+ <!-- Axes -->
+  <param name="axis_linear" value="1" type="int"/>
+  <param name="axis_angular" value="0" type="int"/>
+  <param name="scale_linear" value="0.11" type="double"/>
+  <param name="scale_angular" value="0.11" type="double"/>
+
+  <param name="logs" type="string" value="/home/mis/kinet_ws/src/rosovbc/logs/"/>
+  <param name="data" type="string" value="/home/mis/kinet_ws/src/rosovbc/data/"/>
+</launch>
+
+
