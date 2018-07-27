@@ -158,7 +158,8 @@ public:
 
     //Vivien 2018
     //Subscribe
-    //Callback of the joint_states subsciber
+    //Callback of the joint_states subscriber
+    //Contre mouvement !
     void jointCallback(const sensor_msgs::JointState& joint)
     {
                 /*naoqi_bridge_msgs::JointAnglesWithSpeed pub_joint;
@@ -241,6 +242,10 @@ public:
         vpDisplay::flush(this->m_difference_image);
 
         m_current_features.buildFrom(m_current_image);
+	
+	//Vivien 2018
+        //m_vec_combined_rot_trans_diff_images.push_back(m_difference_image);
+        //m_vec_combined_rot_trans_current_images.push_back(m_current_image);
 
         vpColVector error;
 
@@ -318,6 +323,28 @@ public:
 		ros::shutdown();
 	}
 	*/
+	
+	//Vivien 2018
+	write_data();
+    }
+
+
+    //Vivien 2018
+    //Store current and diff image on the computer
+    //lines from the node visualServoWitheRotation.h
+    void write_data()
+    {
+
+        int size_combined_rot_trans = this->m_vec_combined_rot_trans_current_images.size();
+        for(int i= 0; i<size_combined_rot_trans; i++)
+        {
+            stringstream sstream_curr, sstream_des, sstream_diff;
+            sstream_curr<<m_logs_path<<"current_images/current_image_combined_trans_and_rot_mode_"<<std::setw(4) << std::setfill('0')<<i<<".png";
+            sstream_diff<<m_logs_path<<"diff_images/diff_image_combined_trans_and_rot_mode_"<<std::setw(4) << std::setfill('0')<<i<<".png";
+
+            vpImageIo::write(m_vec_combined_rot_trans_current_images[i], sstream_curr.str().c_str());
+            vpImageIo::write(m_vec_combined_rot_trans_diff_images[i], sstream_diff.str().c_str());
+        }
     }
 
 
@@ -374,5 +401,10 @@ private:
 
     double m_rho;
     vpMatrix m_Lsd, m_diagHsd, m_Hsd;
+    
+    //Vivien 2018
+    std::vector<vpImage<unsigned char> > m_vec_combined_rot_trans_current_images;
+    std::vector<vpImage<unsigned char> > m_vec_combined_rot_trans_diff_images;
+
 };
 
